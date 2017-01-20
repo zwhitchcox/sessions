@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-const mysqlTestServer = "username:password@tcp(localhost)/database?parseTime=true"
+const mysqlTestServer = "root@tcp(127.0.0.1:3306)/myapp?parseTime=true"
 
 var newMySQLStore = func(_ *testing.T) Store {
 	store, err := NewMySQLStore(mysqlTestServer, "sessions", []byte("secret"))
