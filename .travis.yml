@@ -12,7 +12,7 @@ services:
   - mysql
 
 before_install:
-  - mysql -v
+  - mysql -u root -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('')"
   - mysql -e 'CREATE DATABASE myapp;'
 
 script:
