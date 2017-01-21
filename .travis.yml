@@ -12,6 +12,7 @@ services:
   - mysql
 
 before_install:
+  - mysql -v
   - mysql -e 'CREATE DATABASE myapp;'
 
 script:
