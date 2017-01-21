@@ -13,7 +13,6 @@ services:
 before_install:
   # - mysql -u root -e "SET PASSWORD FOR root@localhost = PASSWORD('');"
   # - mysql -u root -e "SET PASSWORD FOR root@127.0.0.1 = PASSWORD('');"
-  - mysql -v
   - mysql -e 'CREATE DATABASE myapp;'
 
 script:
