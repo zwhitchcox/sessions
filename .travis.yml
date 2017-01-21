@@ -12,7 +12,6 @@ services:
 
 before_install:
   - docker run -p 3307:3306 -e MYSQL_DATABASE=app -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql
-  - mysql -u root -h 127.0.0.1 -P 3307 -e 'SHOW DATABASES;'
 
 script:
   - go test -v -covermode=atomic -coverprofile=coverage.out
