@@ -12,8 +12,9 @@ services:
   - mysql
 
 before_install:
-  - mysql -u root -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('')"
-  - mysql -e 'CREATE DATABASE myapp;'
+  - mysql -u root -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('');"
+  - mysql -u root -e "FLUSH PRIVILEGES;"
+  - mysql -u root -e 'CREATE DATABASE myapp;'
 
 script:
   - go test -v -covermode=atomic -coverprofile=coverage.out
