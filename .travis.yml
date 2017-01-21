@@ -13,7 +13,7 @@ services:
 
 before_install:
   - mysql -u root -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('');"
-  - mysql -u root -h '127.0.0.1' -e 'CREATE DATABASE myapp;'
+  - mysql -u travis -e 'CREATE DATABASE myapp;'
 
 script:
   - go test -v -covermode=atomic -coverprofile=coverage.out
