@@ -55,6 +55,8 @@ type Session interface {
 	Options(Options)
 	// Save saves all sessions used during the current request.
 	Save() error
+	// Returns the underlying gorilla Session
+	Session() *sessions.Session
 }
 
 func Sessions(name string, store Store) gin.HandlerFunc {
